@@ -1,445 +1,86 @@
+ 
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
-    <script>window.Intl=window.Intl||{};Intl.t=function(s){return(Intl._locale&&Intl._locale[s])||s;};</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseño Estratégico TJ - Tu negocio, con estrategia</title>
-    <meta name="description" content="Agencia de branding, diseño estratégico y marketing digital en Tijuana. Creamos logotipos, identidad corporativa y estrategias web enfocadas en hacer crecer tu negocio.">
-    <meta name="keywords" content="diseño estrategico tijuana, branding tijuana, logotipos tijuana, desarrollo web tijuana, marketing digital tijuana, diseño grafico tijuana">
-    <meta name="author" content="Diseño Estratégico TJ">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://disenoestrategicotj.com/">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Diseño Estratégico TJ - Branding & Marketing">
-    <meta property="og:description" content="Impulsamos tu marca al siguiente nivel. Diseño de logotipos, páginas web y estrategias digitales efectivas.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format">
-    <meta property="og:url" content="https://disenoestrategicotj.com/">
-    <meta property="og:locale" content="es_MX">
-    <meta property="og:site_name" content="Diseño Estratégico TJ">
-    <meta name="theme-color" content="#111416">
-
+    <title>Tarjeta IQR</title>
     <style>
-        /* ======================================================== */
-        /* 1. VARIABLES DE COLOR (IDENTIDAD DETJ)                  */
-        /* ======================================================== */
-        :root {
-            --detj-fondo: #111416;       /* Fondo oscuro metal cepillado moderno */
-            --detj-naranja: #ff6a00;     /* Naranja vibrante de la firma */
-            --detj-lima: #d4ff00;        /* Verde/Lima tecnológico del crecimiento */
-            --detj-blanco: #ffffff;      
-            --detj-gris-texto: #a0aab2;  
-            --detj-tarjeta: #1a1f24;     /* Gris más claro para contraste de cajas */
-            --detj-whatsapp: #25d366;    
-            --detj-facebook: #1877F2;
-            --detj-instagram: #E1306C;
+       
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
         }
 
-        * {
-            box-sizing: border-box;
+      
+        body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--detj-fondo);
-            color: var(--detj-blanco);
-            overflow-x: hidden;
-        }
-
-        /* ======================================================== */
-        /* 2. ENCABEZADO RETRÁCTIL PREMIUM                          */
-        /* ======================================================== */
-        .detj-encabezado {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh; 
-            background: linear-gradient(rgba(17, 20, 22, 0.75), var(--detj-fondo)), 
-                        url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Monograma DETJ */
-        .detj-cuadro-logo {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--detj-blanco);
-            letter-spacing: -2px;
-            transition: all 0.5s ease;
-        }
-        .detj-cuadro-logo span {
-            color: var(--detj-naranja);
-        }
-
-        .detj-eslogan {
-            font-size: 1.8rem;
-            color: var(--detj-lima);
-            margin-top: 15px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-            transition: all 0.5s ease;
-        }
-
-        .detj-btn-cotizar {
-            margin-top: 35px;
-            background-color: var(--detj-naranja);
-            color: var(--detj-blanco);
-            padding: 15px 40px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 8px 25px rgba(255, 106, 0, 0.3);
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-        }
-        .detj-btn-cotizar:hover { 
-            transform: scale(1.05); 
-            background-color: var(--detj-blanco);
-            color: var(--detj-fondo);
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
-        }
-
-        /* Estado colapsado (Scroll) */
-        body.detj-scrolled .detj-encabezado {
-            height: 80px; 
-            flex-direction: row; 
-            justify-content: space-between;
-            padding: 0 5%;
-            background: rgba(26, 31, 36, 0.98);
-            border-bottom: 2px solid var(--detj-naranja);
-        }
-        body.detj-scrolled .detj-cuadro-logo { font-size: 1.8rem; }
-        body.detj-scrolled .detj-eslogan { font-size: 0.9rem; margin-top: 0; }
-        body.detj-scrolled .detj-btn-cotizar { margin-top: 0; padding: 10px 20px; font-size: 0.85rem; }
-
-        .detj-espacio-relleno { height: 100vh; }
-
-        /* ======================================================== */
-        /* 3. MAQUETACIÓN DE CONTENIDO PRINCIPAL                    */
-        /* ======================================================== */
-        .detj-seccion-principal {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 50px;
-            align-items: center;
-        }
-
-        .detj-punto-activo {
-            width: 10px; height: 10px; background-color: var(--detj-lima);
-            border-radius: 50%; display: inline-block; margin-right: 10px;
-            box-shadow: 0 0 10px var(--detj-lima); animation: detj-parpadeo 1.8s infinite;
-        }
-        @keyframes detj-parpadeo { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
-
-        .detj-titulo-bienvenida { font-size: 3rem; color: var(--detj-blanco); line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
-        .detj-titulo-bienvenida span { color: var(--detj-naranja); }
-        .detj-texto-opaco { color: var(--detj-gris-texto); font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; }
-
-        .detj-caja-botones { display: flex; gap: 15px; margin-bottom: 35px; }
-        .detj-btn-accion { padding: 14px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; text-align: center; }
-        .detj-btn-naranja { background-color: var(--detj-naranja); color: white; }
-        .detj-btn-naranja:hover { filter: brightness(1.1); transform: translateY(-2px); }
-        .detj-btn-borde { border: 2px solid var(--detj-lima); color: var(--detj-lima); }
-        .detj-btn-borde:hover { background: var(--detj-lima); color: black; transform: translateY(-2px); }
-
-        .detj-caja-servicios { display: flex; flex-direction: column; gap: 12px; }
-        .detj-item-servicio-corto { background: rgba(255,255,255,0.02); border: 1px solid rgba(160, 170, 178, 0.15); color: var(--detj-gris-texto); padding: 14px; border-radius: 6px; font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
-        .detj-item-servicio-corto::before { content: "➔"; color: var(--detj-naranja); }
-
-        .detj-marco-portada { border: 4px solid var(--detj-tarjeta); background-color: var(--detj-tarjeta); border-radius: 12px; padding: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
-        .detj-marco-portada img { width: 100%; border-radius: 8px; display: block; filter: grayscale(20%); }
-
-        .detj-seccion-bloque { max-width: 1200px; margin: 100px auto; padding: 0 20px; }
-        .detj-titulo-bloque { font-size: 2.2rem; color: var(--detj-blanco); border-left: 6px solid var(--detj-naranja); padding-left: 20px; margin-bottom: 40px; text-transform: uppercase; font-weight: 800; letter-spacing: -0.5px; }
-
-        .detj-rejilla-portafolio { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .detj-tarjeta-proyecto { background-color: var(--detj-tarjeta); border: 1px solid rgba(255,255,255,0.02); border-radius: 12px; padding: 20px; transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
-        .detj-tarjeta-proyecto:hover { transform: translateY(-8px); border-color: var(--detj-naranja); box-shadow: 0 15px 30px rgba(255, 106, 0, 0.15); }
-        .detj-tarjeta-proyecto img { width: 100%; height: 210px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; }
-        .detj-tarjeta-proyecto h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--detj-blanco); }
-
-        /* ======================================================== */
-        /* 4. SECCIONES PLEGABLES MULTIMEDIA                        */
-        /* ======================================================== */
-        .detj-zona-oculta {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        .detj-zona-oculta.detj-desplegado {
-            display: block;
-            opacity: 1;
-            margin-top: 40px;
-        }
-
-        .detj-btn-disparador { display: block; width: fit-content; margin: 40px auto 0 auto; background-color: transparent; border: 2px solid var(--detj-naranja); color: var(--detj-naranja); padding: 14px 35px; border-radius: 6px; font-weight: 700; cursor: pointer; transition: all 0.2s ease; text-transform: uppercase; font-size: 0.95rem; }
-        .detj-btn-disparador:hover { background-color: var(--detj-naranja); color: white; }
-
-        .detj-rejilla-oculta-fotos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding-top: 30px; border-top: 1px dashed rgba(255,255,255,0.1); }
-        
-        /* ======================================================== */
-        /* 5. METODOLOGÍA E INFRAESTRUCTURA                        */
-        /* ======================================================== */
-        .detj-contenedor-pasos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .detj-paso-card { background: linear-gradient(145deg, var(--detj-tarjeta), var(--detj-fondo)); padding: 35px; border-radius: 12px; border-bottom: 4px solid var(--detj-gris-texto); transition: all 0.3s ease; }
-        .detj-paso-card:hover { border-bottom-color: var(--detj-lima); transform: scale(1.02); }
-        .detj-paso-card h3 { color: var(--detj-naranja); font-size: 1.6rem; margin-bottom: 10px; }
-        .detj-paso-card h4 { font-size: 1.1rem; margin-bottom: 10px; color: var(--detj-blanco); }
-        
-        /* ======================================================== */
-        /* 6. COTIZACIÓN DE PROYECTOS                               */
-        /* ======================================================== */
-        .detj-rejilla-planes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
-        .detj-tarjeta-plan { background: linear-gradient(145deg, var(--detj-tarjeta), #111416); border: 1px solid rgba(255, 255, 255, 0.02); border-radius: 12px; padding: 35px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
-        .detj-tarjeta-plan.destacado { border: 2px solid var(--detj-naranja); }
-        .detj-tarjeta-plan.destacado::before { content: "POPULAR"; position: absolute; top: 15px; right: -30px; background: var(--detj-naranja); color: white; font-size: 0.7rem; font-weight: 700; padding: 4px 30px; transform: rotate(45deg); }
-        
-        .detj-tarjeta-plan h3 { font-size: 1.5rem; color: var(--detj-blanco); margin-bottom: 15px; }
-        .detj-tarjeta-plan p { color: var(--detj-gris-texto); font-size: 0.95rem; line-height: 1.5; margin-bottom: 25px; }
-
-        .detj-btn-plan { display: inline-flex; align-items: center; justify-content: center; padding: 14px 24px; border-radius: 6px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; text-transform: uppercase; font-size: 0.9rem; }
-        .detj-btn-plan:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-        
-        .detj-plan-contacto { background-color: var(--detj-naranja); color: white; }
-        .detj-plan-contacto:hover { background-color: white; color: var(--detj-fondo); }
-        .detj-plan-borde { border: 2px solid var(--detj-lima); color: var(--detj-lima); }
-        .detj-plan-borde:hover { background-color: var(--detj-lima); color: black; }
-
-        .detj-pie-pagina { background-color: #0b0d0e; border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 50px 20px; margin-top: 120px; text-align: center; }
-        .detj-pie-enlaces { display: flex; gap: 25px; justify-content: center; margin-top: 20px; }
-        .detj-pie-enlaces a { color: var(--detj-gris-texto); text-decoration: none; font-size: 0.9rem; }
-        .detj-pie-enlaces a:hover { color: var(--detj-naranja); }
-
-        /* ======================================================== */
-        /* 7. BARRA SOCIAL FLOTANTE ESTABLE                         */
-        /* ======================================================== */
-        .detj-barra-social-fija {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 9999;
-        }
-        .detj-icono-flotante {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.6);
-            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: #0f0529;
             color: white;
-            text-decoration: none;
+            font-family: Arial, sans-serif;
         }
-        .detj-icono-flotante:hover { transform: scale(1.15); }
-        .detj-flotante-wa { background-color: var(--detj-whatsapp); }
-        .detj-flotante-fb { background-color: var(--detj-facebook); }
-        .detj-flotante-ig { background-color: var(--detj-instagram); }
     </style>
 </head>
 <body>
 
-    <!-- BARRA FIJA DE REDES SOCIALES -->
-    <div class="detj-barra-social-fija">
-        <a href="https://instagram.com" target="_blank" class="detj-icono-flotante detj-flotante-ig" title="Instagram">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-        </a>
-        <a href="https://facebook.com" target="_blank" class="detj-icono-flotante detj-flotante-fb" title="Facebook">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-        <a href="https://wa.me/526640000000" target="_blank" class="detj-icono-flotante detj-flotante-wa" title="WhatsApp">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5a12 12 0 0 0-8.5-3.5C5.4 0 .1 5.3.1 12c0 2.1.6 4.2 1.6 6L0 24l6.3-1.7A12 12 0 0 0 12 23.5c6.6 0 12-5.3 12-11.8 0-3.2-1.2-6.2-3.5-8.2ZM12 21.5h-.1a10 10 0 0 1-5-1.4l-.3-.2-3.7 1 1-3.6-.2-.4A9.6 9.6 0 0 1 2 12C2 6.5 6.5 2 12 2a9.7 9.7 0 0 1 6.9 2.8A9.7 9.7 0 0 1 22 12c0 5.5-4.5 9.5-10 9.5Zm5.3-7.3c-.3-.2-1.7-.9-2-.9s-.5-.2-.7.1c-.2.3-.8 1-.9 1.2-.2.2-.4.2-.7.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3c.2.2 2.1 3.3 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.1-1.4 0-.1-.2-.2-.5-.3Z"/></svg>
-        </a>
-    </div>
+<script>
+ 
+document.oncontextmenu = () => false;
 
-    <!-- ENCABEZADO RETRÁCTIL -->
-    <header class="detj-encabezado" id="detjHeader">
-        <div class="detj-cuadro-logo">DE<span>TJ</span></div>
-        <div class="detj-eslogan">Tu negocio, con estrategia</div>
-        <a class="detj-btn-cotizar" href="https://wa.me/526640000000?text=Hola,%20me%20interesa%20una%20consultoria%20estrategica" target="_blank">
-            Iniciar Proyecto
-        </a>
-    </header>
+ 
+document.onkeydown = (e) => {
+    const prohibidas = [123, 85, 67, 83, 73];  
+    if (prohibidas.includes(e.keyCode) || 
+        (e.ctrlKey && [67, 83, 85, 80].includes(e.keyCode))) {
+        return false;
+    }
+};
 
-    <div class="detj-espacio-relleno"></div>
+ 
+const rutaOriginal = window.location.href;
 
-    <!-- SECCIÓN 1: BIENVENIDA -->
-    <main class="detj-seccion-principal">
-        <div>
-            <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                <span class="detj-punto-activo"></span>
-                <span style="color: var(--detj-lima); font-weight: bold; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Estudio Creativo Activo</span>
-            </div>
-            <h1 class="detj-titulo-bienvenida">Diseño de impacto.<br><span>Estrategias reales</span><br>que duplican ventas.</h1>
-            <p class="detj-texto-opaco">No hacemos simple decoración visual. En Diseño Estratégico TJ fusionamos la identidad corporativa fuerte con sistemas de conversión digital pensados exclusivamente para el mercado actual. Posicionamos tu marca con autoridad.</p>
-            <div class="detj-caja-botones">
-                <a href="https://wa.me/526640000000" class="detj-btn-accion detj-btn-naranja" target="_blank">Escríbenos por WhatsApp</a>
-                <a href="#portafolio" class="detj-btn-accion detj-btn-borde">Ver Portafolio</a>
-            </div>
-            <div class="detj-caja-servicios">
-                <div class="detj-item-servicio-corto">Branding & Logotipos de Alta Recordación</div>
-                <div class="detj-item-servicio-corto">Desarrollo Web & Landing Pages de Conversión</div>
-                <div class="detj-item-servicio-corto">Estrategia Digital & Embudos de Venta Publicitarios</div>
-            </div>
-        </div>
-        <div class="detj-marco-portada">
-            <img src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?q=80&w=600" alt="Mesa de Trabajo Estratégica">
-        </div>
-    </main>
+ 
+function verificarRuta() {
+    if (!rutaOriginal.includes('file://') && !rutaOriginal.includes('localhost') && !rutaOriginal.includes('iqr-system.com')) {
+        document.body.innerHTML = `<div style="padding:40px; text-align:center; color:#ff4444;">
+            <h3>⚠️ Archivo no válido</h3>
+            <p>Esta tarjeta solo funciona en la ubicación donde fue descargada.</p>
+            <p style="font-size:12px; margin-top:20px;">IQR :: SYSTEM::GRAFIC</p>
+        </div>`;
+        return;
+    }
+}
+verificarRuta();
 
-    <!-- SECCIÓN 2: PORTAFOLIO -->
-    <section class="detj-seccion-bloque" id="portafolio">
-        <h2 class="detj-titulo-bloque">Proyectos con Enfoque Comercial</h2>
-        <div class="detj-rejilla-portafolio">
-            <div class="detj-tarjeta-proyecto">
-                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=400" alt="Branding">
-                <h3>Identidades Corporativas</h3>
-                <p style="color:var(--detj-gris-texto); font-size: 0.9rem;">Estructuración de marcas memorables desde vectores base limpios hasta aplicaciones cromáticas complejas.</p>
-            </div>
-            <div class="detj-tarjeta-proyecto">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400" alt="Web">
-                <h3>Plataformas Web Optimistas</h3>
-                <p style="color:var(--detj-gris-texto); font-size: 0.9rem;">Diseños UI/UX limpios y adaptados a dispositivos móviles enfocados en la captura de prospectos de valor.</p>
-            </div>
-            <div class="detj-tarjeta-proyecto">
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=400" alt="Marketing">
-                <h3>Campañas de Lanzamiento</h3>
-                <p style="color:var(--detj-gris-texto); font-size: 0.9rem;">Configuración integral de pautas publicitarias con creativos de alto impacto para penetración de mercados.</p>
-            </div>
-        </div>
+ 
+const codigoBase = btoa("IQR-SEG-2026-001");  
+setInterval(() => {
+    const actual = btoa(document.documentElement.innerHTML.slice(0, 100));
+    if (actual !== codigoBase && !actual.includes('IQR')) {
+        document.body.innerHTML = `<div style="padding:40px; text-align:center; color:#ff4444;">
+            <h3>❌ Contenido alterado</h3>
+            <p>El archivo ha sido modificado y ya no es válido.</p>
+            <p style="font-size:12px; margin-top:20px;">IQR :: SYSTEM::GRAFIC</p>
+        </div>`;
+    }
+}, 1000);
 
-        <button class="detj-btn-disparador" onclick="detjAlternarSeccion('detjOcultoCasos')">Explorar más áreas comerciales</button>
+ 
+window.addEventListener('beforeunload', () => {					
+    window.history.pushState(null, null, window.location.href);
+});
+</script>
 
-        <!-- PLEGABLE 1: MÁS PROYECTOS -->
-        <div id="detjOcultoCasos" class="detj-zona-oculta">
-            <div class="detj-rejilla-portafolio" style="padding-top: 30px; border-top: 1px dashed rgba(255,255,255,0.1)">
-                <div class="detj-tarjeta-proyecto">
-                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=400" alt="Packaging">
-                    <h3>Empaque & Etiquetas</h3>
-                    <p style="color:var(--detj-gris-texto); font-size: 0.9rem;">Soluciones gráficas físicas listas para imprenta con rigurosos estándares técnicos de producción.</p>
-                </div>
-                <div class="detj-tarjeta-proyecto">
-                    <img src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?q=80&w=400" alt="Consultoria">
-                    <h3>Auditorías de Marca</h3>
-                    <p style="color:var(--detj-gris-texto); font-size: 0.9rem;">Análisis y diagnóstico de la presencia digital de empresas para detectar fugas de tráfico y clientes.</p>
-                </div>
-                <div class="detj-tarjeta-proyecto">
-                    <img src="https://images.unsplash.com/photo-1541462608141-ad4979e408c9?q=80&w=400" alt="UI">
-                    <h3>Sistemas de Diseño Dedicados</h3>
-                    <p style="color:var(--detj-gris-texto); font-size: 0.9rem;">Estandarización de tipografías, paletas de colores y componentes interactivos para equipos internos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 3: METODOLOGÍA -->
-    <section class="detj-seccion-bloque" id="metodologia">
-        <h2 class="detj-titulo-bloque">El Proceso Estratégico</h2>
-        <div class="detj-contenedor-pasos">
-            <div class="detj-paso-card">
-                <h3>01. Diagnóstico Inicial</h3>
-                <h4>Entendemos tu mercado</h4>
-                <p style="color:var(--detj-gris-texto); font-size:0.95rem;">Evaluamos la situación real de tu competencia directa y tus objetivos de facturación para trazar una ruta clara.</p>
-            </div>
-            <div class="detj-paso-card">
-                <h3>02. Desarrollo Estructurado</h3>
-                <h4>Construcción con base matemática</h4>
-                <p style="color:var(--detj-gris-texto); font-size:0.95rem;">Diseñamos piezas vectoriales puras en blanco y negro para asegurar legibilidad técnica absoluta antes de aplicar la colorimetría estratégica.</p>
-            </div>
-            <div class="detj-paso-card">
-                <h3>03. Lanzamiento e Impulso</h3>
-                <h4>Activación comercial dirigida</h4>
-                <p style="color:var(--detj-gris-texto); font-size:0.95rem;">Implementamos los sistemas en servidores óptimos, configuramos extensiones y encendemos pautas publicitarias directas al grano.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 4: CONSULTORÍAS / COTIZACIONES -->
-    <section class="detj-seccion-bloque" id="servicios">
-        <h2 class="detj-titulo-bloque">Esquemas de Colaboración</h2>
-        <div class="detj-rejilla-planes">
-            <div class="detj-tarjeta-plan">
-                <div>
-                    <h3>Asesoría de Diagnóstico</h3>
-                    <p>Sesión uno a uno de revisión técnica de tu ecosistema comercial actual, analizando bloqueos en diseño y conversión web.</p>
-                </div>
-                <a class="detj-btn-plan detj-plan-borde" href="https://wa.me/526640000000?text=Quiero%20una%20Asesoria%20de%20Diagnostico" target="_blank">Agendar Sesión</a>
-            </div>
-            <div class="detj-tarjeta-plan destacado">
-                <div>
-                    <h3>Proyecto de Identidad Integral</h3>
-                    <p>Desarrollo completo de marca: Logotipo vectorial matriz, manual de uso tipográfico, paleta cromática de alta fidelidad y papelería digital corporativa.</p>
-                </div>
-                <a class="detj-btn-plan detj-plan-contacto" href="https://wa.me/526640000000?text=Me%20interesa%20el%20Proyecto%20de%20Identidad%20Integral" target="_blank">Cotizar Identidad</a>
-            </div>
-            <div class="detj-tarjeta-plan">
-                <div>
-                    <h3>Célula de Diseño Mensual</h3>
-                    <p>Soporte continuo y directo para marcas establecidas que requieren flujos constantes de material comercial, landing pages y optimización publicitaria.</p>
-                </div>
-                <a class="detj-btn-plan detj-plan-borde" href="https://wa.me/526640000000?text=Requiero%20informacion%20de%20la%20Celulal%20Mensual" target="_blank">Solicitar Evaluación</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- PIE DE PÁGINA -->
-    <footer class="detj-pie-pagina">
-        <p style="font-weight:800; font-size:1.3rem; color:var(--detj-blanco); letter-spacing:-0.5px;">DISEÑO ESTRATÉGICO <span style="color:var(--detj-naranja);">TJ</span></p>
-        <p style="color:var(--detj-gris-texto); font-size:0.85rem; margin-top:8px;">&copy; 2026 Diseño Estratégico TJ. Todos los derechos reservados. Tu negocio, con estrategia.</p>
-        <div class="detj-pie-enlaces">
-            <a href="#">Términos de Servicio</a>
-            <span style="color:rgba(255,255,255,0.1)">|</span>
-            <a href="#">Políticas de Privacidad</a>
-        </div>
-    </footer>
-
-    <!-- SCRIPTS DE CONTROL -->
-    <script>
-        // Manejo del scroll del encabezado
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 80) {
-                document.body.classList.add('detj-scrolled');
-            } else {
-                document.body.classList.remove('detj-scrolled');
-            }
-        });
-
-        // Alternador de visibilidad de las secciones ocultas
-        function detjAlternarSeccion(idSeccion) {
-            var seccion = document.getElementById(idSeccion);
-            if (seccion.classList.contains('detj-desplegado')) {
-                seccion.classList.remove('detj-desplegado');
-            } else {
-                seccion.classList.add('detj-desplegado');
-            }
-        }
-    </script>
-</body>
-</html>
+ 
+<div style="padding:30px; text-align:center;">
+    <h1>¡Feliz Celebración!</h1>
+    <p>Contenido protegido</p>
+    <div style="position:absolute; bottom:15px; right:20px; font-size:11px; color:#888;">IQR :: SYSTEM::GRAFIC</div>
+</div>
 
 </body>
-</html>
+checar</html>
