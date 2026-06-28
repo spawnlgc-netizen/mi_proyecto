@@ -1,86 +1,51 @@
- 
-<!DOCTYPE html>
-<html lang="es-MX">
+ <!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta IQR</title>
+    <title>iQR System</title>
     <style>
-       
-        * {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-touch-callout: none;
-        }
-
+        
+        body, html { margin: 0; padding: 0; height: 100%; background: #000; font-family: sans-serif; }
+        
       
-        body {
-            margin: 0;
-            padding: 0;
-            background: #0f0529;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
+        #splash { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; }
+        video { width: 100%; height: 100%; object-fit: cover; }
+        
+       
+        #contenido { display: none; text-align: center; color: white; padding: 20px; }
+        .mi-qr { width: 200px; height: 200px; margin: 20px auto; border: 5px solid white; }
     </style>
 </head>
 <body>
 
-<script>
- 
-document.oncontextmenu = () => false;
+    <div id="splash">
+        <video id="video-player" autoplay muted playsinline>
+            <source src="presentacion.mp4" type="video/mp4">
+        </video>
+    </div>
 
- 
-document.onkeydown = (e) => {
-    const prohibidas = [123, 85, 67, 83, 73];  
-    if (prohibidas.includes(e.keyCode) || 
-        (e.ctrlKey && [67, 83, 85, 80].includes(e.keyCode))) {
-        return false;
-    }
-};
+    <div id="contenido">
+        <h1>¡Bienvenido </h1>
+        <p> está listo.</p>
+        
+        <img src="qr_cliente.png" class="mi-qr" alt="QR del Cliente">
+        
+        <a href="archivo_cliente.pdf" style="display:block; padding:15px; background:blue; color:white; border-radius:10px;">
+            
+        </a>
+    </div>
 
- 
-const rutaOriginal = window.location.href;
-
- 
-function verificarRuta() {
-    if (!rutaOriginal.includes('file://') && !rutaOriginal.includes('localhost') && !rutaOriginal.includes('iqr-system.com')) {
-        document.body.innerHTML = `<div style="padding:40px; text-align:center; color:#ff4444;">
-            <h3>⚠️ Archivo no válido</h3>
-            <p>Esta tarjeta solo funciona en la ubicación donde fue descargada.</p>
-            <p style="font-size:12px; margin-top:20px;">IQR :: SYSTEM::GRAFIC</p>
-        </div>`;
-        return;
-    }
-}
-verificarRuta();
-
- 
-const codigoBase = btoa("IQR-SEG-2026-001");  
-setInterval(() => {
-    const actual = btoa(document.documentElement.innerHTML.slice(0, 100));
-    if (actual !== codigoBase && !actual.includes('IQR')) {
-        document.body.innerHTML = `<div style="padding:40px; text-align:center; color:#ff4444;">
-            <h3>❌ Contenido alterado</h3>
-            <p>El archivo ha sido modificado y ya no es válido.</p>
-            <p style="font-size:12px; margin-top:20px;">IQR :: SYSTEM::GRAFIC</p>
-        </div>`;
-    }
-}, 1000);
-
- 
-window.addEventListener('beforeunload', () => {					
-    window.history.pushState(null, null, window.location.href);
-});
-</script>
-
- 
-<div style="padding:30px; text-align:center;">
-    <h1>¡Feliz Celebración!</h1>
-    <p>Contenido protegido</p>
-    <div style="position:absolute; bottom:15px; right:20px; font-size:11px; color:#888;">IQR :: SYSTEM::GRAFIC</div>
-</div>
-
+    <script>
+        const video = document.getElementById('video-player');
+        const splash = document.getElementById('splash');
+        const contenido = document.getElementById('contenido');
+        
+        
+        video.onended = () => { 
+            splash.style.display = 'none'; 
+            contenido.style.display = 'block'; 
+        };
+    </script>
 </body>
-checar</html>
+</html>
